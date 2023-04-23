@@ -5,7 +5,7 @@ The isSelected prop determines whether the item is selected or not, and the onCl
 The SingleListItem component renders the item's text as the content of the list item (<li>) and changes the background color based on whether the item is selected or not. The onClick event is attached to the list item to trigger the onClickHandler callback when the item is clicked.
 Overall, this List component can be used as a reusable component in React applications to render a list of items with a single selected item at a time.
   
-  2. There are a few problems and warnings with the given code:
+ 2. There are a few problems and warnings with the given code:
 In the SingleListItem component, the onClick event handler should be a function that returns the onClickHandler callback with the index as an argument, like this: onClick={() => onClickHandler(index)}. Otherwise, the onClickHandler will be immediately invoked when the component is rendered, which is not the intended behavior.
 In the SingleListItem component, the isSelected prop is passed as a boolean value, but it should be passed as the index of the selected item. Otherwise, the background color will always be green, even when no item is selected. To fix this, the isSelected prop should be passed as isSelected === index.
 In the WrappedListComponent propTypes, the items prop should be defined as PropTypes.arrayOf(PropTypes.shape({...})) instead of PropTypes.array(PropTypes.shape({...})).
